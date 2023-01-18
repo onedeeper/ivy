@@ -176,6 +176,14 @@ class ndarray:
             subok=subok,
         )
 
+    def compress(self, condition, a, axis=None, out=None):
+        return np_frontend.compress(
+            self._ivy_array,
+            condition,
+            axis=axis,
+            out=out,
+        )
+
     def cumprod(self, *, axis=None, dtype=None, out=None):
         return np_frontend.cumprod(
             self._ivy_array,
